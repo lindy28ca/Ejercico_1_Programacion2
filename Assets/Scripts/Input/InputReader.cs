@@ -22,4 +22,4 @@ public class InputReader : MonoBehaviour
             Habilidad?.Invoke();
         }
     }
-}s
+}
