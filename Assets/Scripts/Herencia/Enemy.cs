@@ -1,5 +1,11 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+
+public interface IHabilidades
+{
+    void habilidad();
+}
+
 [RequireComponent (typeof(Rigidbody2D))]
 abstract public class Enemy : MonoBehaviour
 {
@@ -21,15 +27,18 @@ abstract public class Enemy : MonoBehaviour
         move = value*velocity;
     }
     protected abstract void Attac();
+    protected abstract void Habilidad();
     private void OnEnable()
     {
         InputReader.Move += Move;
         InputReader.Attac += Attac;
+        InputReader.Habilidad += Habilidad;
     }
+   
     private void OnDisable()
     {
         InputReader.Move += Move;
         InputReader.Attac += Attac;
+        InputReader.Habilidad += Habilidad;
     }
-
 }
